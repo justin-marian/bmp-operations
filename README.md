@@ -42,7 +42,7 @@ Each pixel's new color values remain within the acceptable range for RGB color c
 
 ## Memory Management
 
-To ensure there are no memory leaks, we recommend regularly checking with `Valgrind`,  memory debugging, memory leak detection. Running your program through Valgrind will help identify where your program might be leaking memory.
+To ensure there are no memory leaks, we recommend regularly checking with `Valgrind`,  memory debugging, memory leak detection. Running program through Valgrind will help identify where your program might be leaking memory.
 
 ```bash
 valgrind --leak-check=full --show-leak-kinds=all ./interactive
