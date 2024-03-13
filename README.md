@@ -31,20 +31,6 @@ The matrix of pixels with each pixel comprising *Red (R), Green (G), and Blue (B
 
 The new value of a pixel at position `(i, j)`, denoted as $(R'_{ij}, G'_{ij}, B'_{ij})$, is calculated by applying the filter to the pixel and its neighbors. This operation involves a convolution between the filter matrix and the region of the image surrounding the pixel, taking into account the boundary conditions.
 
-The formulas for calculating the new pixel values are:
-
-$$
-R'_{ij} = \sum_{m=1}^{filter\_size} \sum_{n=1}^{filter\_size} R_{(i+m-\frac{filter\_size+1}{2}),(j+n-\frac{filter\_size+1}{2})} \cdot f_{mn}
-$$
-
-$$
-G'_{ij} = \sum_{m=1}^{filter\_size} \sum_{n=1}^{filter\_size} G_{(i+m-\frac{filter\_size+1}{2}),(j+n-\frac{filter\_size+1}{2})} \cdot f_{mn}
-$$
-
-$$
-B'_{ij} = \sum_{m=1}^{filter\_size} \sum_{n=1}^{filter\_size} B_{(i+m-\frac{filter\_size+1}{2}),(j+n-\frac{filter\_size+1}{2})} \cdot f_{mn}
-$$
-
 **Note:** When the pixel's neighbors extend beyond the image boundaries, those neighbors are assumed to have the value (0, 0, 0) for the purposes of this calculation.
 
 After calculating the sums for **$R'$, $G'$, and $B'$**, the values are cast to integers and clamped to the range **[0, 255]** to ensure they remain valid color component values:
