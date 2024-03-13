@@ -29,7 +29,7 @@ The matrix of pixels with each pixel comprising *Red (R), Green (G), and Blue (B
 - The original value of a pixel at position `(i, j)` in the image as $(R_{ij}, G_{ij}, B_{ij})$.
 - The filter matrix as $F$, with elements $f_{mn}$, where $m$ and $n$ run from 1 to `filter_size`.
 
-The new value of a pixel at position `(i, j)`, denoted as $(R'_{ij}, G'_{ij}, B'_{ij})$, is calculated by applying the filter to the pixel and its neighbors. This operation involves a convolution between the filter matrix and the region of the image surrounding the pixel, taking into account the boundary conditions.
+The new value of a pixel at position `(i, j)` is calculated by applying the filter to the pixel and its neighbors. This operation involves a convolution between the filter matrix and the region of the image surrounding the pixel, taking into account the boundary conditions.
 
 **Note:** When the pixel's neighbors extend beyond the image boundaries, those neighbors are assumed to have the value (0, 0, 0) for the purposes of this calculation.
 
