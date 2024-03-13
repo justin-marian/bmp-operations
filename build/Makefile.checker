@@ -1,0 +1,33 @@
+# Compiler and compiler flags
+CC = gcc
+CFLAGS = -Wall -Werror
+
+# Define the executable to build
+EXECUTABLE=check16
+
+# Paths
+SRC_PATH = ../src
+
+# Define source files
+SOURCES=$(SRC_PATH)/check16.c $(SRC_PATH)/imageprocessing.c $(SRC_PATH)/bmp.c
+
+# Define object files with the output directory prefixed
+OBJECTS=$(notdir $(SOURCES:.c=.o))
+
+# Phony targets for make
+.PHONY: all clean
+
+# Default target to build the executable
+all: $(EXECUTABLE)
+
+# Rule for linking the executable
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(CFLAGS) -o $@ $^
+
+# Rule for compiling object files
+%.o: $(SRC_PATH)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Rule for cleaning up generated files
+clean:
+	rm -f $(OBJECTS) $(EXECUTABLE)
